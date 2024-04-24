@@ -27,8 +27,8 @@ class Prompt(BaseModel):
     input: str
 
 # Generate Stream
-async def stream_generator(subscription):
-    async for chunk in subscription:
+async def stream_processor(response):
+    async for chunk in response:
         if len(chunk.choices) > 0:
             delta = chunk.choices[0].delta
             if delta.content:
@@ -38,14 +38,14 @@ async def stream_generator(subscription):
 # API Endpoint
 @app.post("/stream")
 async def stream(prompt: Prompt):
-    response = await client.chat.completions.create(
+    azure_open_ai_response = await client.chat.completions.create(
         model=deployment,
         temperature=temperature,
         messages=[{"role": "user", "content": prompt.input}],
         stream=True
     )
 
-    return StreamingResponse(stream_generator(response), media_type="text/event-stream")
+    return StreamingResponse(stream_processor(azure_open_ai_response), media_type="text/event-stream")
 
 
 if __name__ == "__main__":
