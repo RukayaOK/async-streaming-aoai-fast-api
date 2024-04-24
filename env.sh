@@ -1,0 +1,33 @@
+#!/bin/bash 
+
+export APP_PATH="./src"
+export INFRA_PATH="./infra"
+
+#!/bin/bash
+
+# Path 
+export INFRA_PATH=infra
+export APP_PATH=src
+
+# Terraform Backend Bootstrap and Init 
+export TERRAFORM_BACKEND_TENANT_ID=""
+export TERRAFORM_BACKEND_SUBSCRIPTION_ID=""
+export TERRAFORM_BACKEND_LOCATION=""
+export TERRAFORM_BACKEND_RESOURCE_GROUP=""
+export TERRAFORM_BACKEND_STORAGE_ACCOUNT=""
+export TERRAFORM_BACKEND_STORAGE_ACCOUNT_SKU=""
+export TERRAFORM_BACKEND_CONTAINER=""
+export TERRAFORM_BACKEND_STATE_FILE=""
+export TERRAFORM_SERVICE_PRINCIPAL=""
+
+# Terraform Variables
+export ARM_CLIENT_ID=""
+export ARM_CLIENT_SECRET=""
+export ARM_TENANT_ID=""
+export ARM_SUBSCRIPTION_ID=""
+export ARM_ACCESS_KEY=""
+
+# App variables 
+export AZURE_OPEN_AI_ENDPOINT=""
+export AZURE_OPEN_AI_API_KEY=""
+export AZURE_OPEN_AI_DEPLOYMENT_MODEL=""
