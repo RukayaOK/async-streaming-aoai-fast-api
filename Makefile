@@ -85,7 +85,3 @@ endif
 .PHONY: app-run
 app-run: app-env		## Build Application
 	bash ./helpers/app.sh run
-
-.PHONY: app-deploy
-app-deploy: app-env		## Deploy Application
-	bash ./helpers/app.sh deploy
